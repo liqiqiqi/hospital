@@ -15,17 +15,14 @@ Route::get('/', function () {
 	return view('welcome');
 });
 Route::any('home/index', 'Home\HomeController@index');
-// Route::any('home/chuzhen', 'Home\HomeController@chuzhen');
-// Route::any('home/jianjie', 'Home\HomeController@jianjie');
-// Route::any('home/jiuzhen', 'Home\HomeController@jiuzhen');
-// Route::any('home/keshi', 'Home\HomeController@keshi');
-// Route::any('home/keshimx', 'Home\HomeController@keshimx');
-// Route::any('home/keshiys', 'Home\HomeController@keshiys');
-// Route::any('home/kexue', 'Home\HomeController@kexue');
-// Route::any('home/kexuelist', 'Home\HomeController@kexuelist');
-// Route::any('home/news', 'Home\HomeController@news');
-// Route::any('home/newslist', 'Home\HomeController@newslist');
-// Route::any('home/rongyu', 'Home\HomeController@rongyu');
-// Route::any('home/ys', 'Home\HomeController@ys');
-// Route::any('home/zhuanjia', 'Home\HomeController@zhuanjia');
 Route::any('admin/index', 'Admin\AdminController@index');
+
+//李琪
+Route::any('doctor/doctorAdd', 'Admin\DoctorController@doctorAdd');
+Route::any('doctor/doctorAddDo', 'Admin\DoctorController@doctorAddDo');
+Route::any('doctor/doctorShow', 'Admin\DoctorController@doctorShow');
+Route::any('doctor/doctorDel', 'Admin\DoctorController@doctorDel');
+Route::any('doctor/doctorUpdate', 'Admin\DoctorController@doctorUpdate');
+Route::any('doctor/doctorUpDo', 'Admin\DoctorController@doctorUpDo');
+Route::any('doctor/workDate', 'Admin\DoctorController@workDate');
+Route::any('doctor/workDateSet', 'Admin\DoctorController@workDateSet');
