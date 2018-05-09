@@ -78,9 +78,9 @@
                 <form action="<?php echo url('login/login_do')?>" method="post" onsubmit="return sub()">
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> 
                     <label>账号</label>
-                    <input type="text" class="span12" id="user" name="admin_name" value="" onblur='checkname();' placeholder="输入账号"><span></span>
+                    <input type="text" class="span12" id="user" onkeyup="value=value.replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,''))" name="admin_name" value="" onblur='checkname();' placeholder="输入账号"><span></span>
                     <label>密码</label>
-                    <input type="password" class="span12" id="pwd" name="admin_pwd" value="" onblur='checkpwd();' placeholder="输入密码"><span></span>
+                    <input type="password" class="span12" id="pwd" onkeyup="value=value.replace(/\s/g,'')" name="admin_pwd" value="" onblur='checkpwd();' placeholder="输入密码"><span></span>
                     <label>验证码</label>
                     <td><input type="text" name="code" class="span12" value="" id='code' onblur="checkcode()"><span></span><br/><img id="imgcode" src='img.php'> 
                     <input type="submit" value="登录"  class="btn btn-primary pull-right">
