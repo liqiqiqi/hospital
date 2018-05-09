@@ -144,19 +144,19 @@ $admin_name=$session->get('admin_name');
                 <input type="hidden" name="hos_id" value="<?php echo $arr[0]->hos_id?> ">
             <tr>
                 <td>医院名称：</td>
-                <td><input type="text" name="hos_name" value="<?php echo $arr[0]->hos_name?>"></td>
+                <td><input type="text" name="hos_name" value="<?php echo $arr[0]->hos_name?>"  onkeyup="value=value.replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,''))"></td>
             </tr>
             <tr>
                 <td>医院地址：</td>
-                <td><input type="text" name="hos_address" value="<?php echo $arr[0]->hos_address?> "></td>
+                <td><input type="text" name="hos_address" value="<?php echo $arr[0]->hos_address?> "  onkeyup="value=value.replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,''))"></td>
             </tr>
             <tr>
                 <td>医院版权：</td>
-                <td><input  type="text" name="hos_legal" value="<?php echo $arr[0]->hos_legal?>"></td>
+                <td><input  type="text" name="hos_legal" value="<?php echo $arr[0]->hos_legal?>"  onkeyup="value=value.replace(/[\W]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"></td>
             </tr>
             <tr>
                 <td>医院首页：</td>
-                <td><input type="text" name="hos_url" value="<?php echo $arr[0]->hos_url?> "></td>
+                <td><input type="text" name="hos_url" value="<?php echo $arr[0]->hos_url?> " onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\.]/g,'')"></td>
             </tr>
             <tr>
                 <td>医院logo：</td>
@@ -164,7 +164,7 @@ $admin_name=$session->get('admin_name');
             </tr>
             <tr>
                 <td>紧急联系：</td>
-                <td><input type="text" name="hos_tel" value="<?php echo $arr[0]->hos_tel?> "></td>
+                <td><input type="text" name="hos_tel" value="<?php echo $arr[0]->hos_tel?> "  onkeyup="value=value.replace(/[^\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"></td>
             </tr>
             <tr>
                 <td></td>

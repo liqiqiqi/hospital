@@ -144,11 +144,11 @@ $admin_name=$session->get('admin_name');
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> 
             <tr>
                 <td>科室名称：</td>
-                <td><input type="text" name="sec_name" ></td>
+                <td><input type="text" name="sec_name"  onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\u4E00-\u9FA5]/g,''))"></td>
             </tr>
             <tr>
                 <td>科室介绍：</td>
-                <td><textarea name="sec_content" style="height:300px;width:600px;"></textarea></td>
+                <td><textarea name="sec_content" style="height:300px;width:600px;"  onKeypress="if ((event.keyCode > 32 && event.keyCode < 48) || (event.keyCode > 57 && event.keyCode < 65) || (event.keyCode > 90 && event.keyCode < 97)) event.returnValue = false;"></textarea></td>
             </tr>
             <tr>
                 <td></td>

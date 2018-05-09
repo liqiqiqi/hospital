@@ -144,19 +144,19 @@ $admin_name=$session->get('admin_name');
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> 
             <tr>
                 <td>医院名称：</td>
-                <td><input type="text" name="hos_name" ></td>
+                <td><input type="text" name="hos_name" onkeyup="value=value.replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,''))"></td>
             </tr>
             <tr>
                 <td>医院地址：</td>
-                <td><input type="text" name="hos_address" ></td>
+                <td><input type="text" name="hos_address" onkeyup="value=value.replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,''))"></td>
             </tr>
             <tr>
                 <td>医院版权：</td>
-                <td><input type="text" name="hos_legal" ></td>
+                <td><input type="text" name="hos_legal" onkeyup="value=value.replace(/[\W]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" ></td>
             </tr>
             <tr>
                 <td>医院首页：</td>
-                <td><input type="text" name="hos_url" ><font size="1px"><a href="">点这里跳转</a></font></td>
+                <td><input type="text" name="hos_url" onkeyup="value=value.replace(/[\W]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"><font size="1px"><a href="">点这里跳转</a></font></td>
             </tr>
             <tr>
                 <td>医院logo：</td>
@@ -164,7 +164,7 @@ $admin_name=$session->get('admin_name');
             </tr>
             <tr>
                 <td>紧急联系：</td>
-                <td><input type="text" name="hos_tel" ></td>
+                <td><input type="text" name="hos_tel"  onkeyup="value=value.replace(/[^\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"></td>
             </tr>
             <tr>
                 <td></td>

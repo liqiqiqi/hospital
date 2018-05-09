@@ -146,12 +146,12 @@ $admin_name=$session->get('admin_name');
                 <td>科室名称：</td>
                 <td>
                     <input type="hidden" name="sec_id" value="<?php echo $arr[0]->sec_id?>">
-                    <input type="text" name="sec_name" value="<?php echo $arr[0]->sec_name?>">
+                    <input type="text" name="sec_name" value="<?php echo $arr[0]->sec_name?>" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\u4E00-\u9FA5]/g,''))">
                 </td>
             </tr>
             <tr>
                 <td>科室介绍：</td>
-                <td><textarea name="sec_content" style="height:300px;width:600px;"><?php echo $arr[0]->sec_content?></textarea></td>
+                <td><textarea name="sec_content" style="height:300px;width:600px;" onKeypress="if ((event.keyCode > 32 && event.keyCode < 48) || (event.keyCode > 57 && event.keyCode < 65) || (event.keyCode > 90 && event.keyCode < 97)) event.returnValue = false;"><?php echo $arr[0]->sec_content?></textarea></td>
             </tr>
             <tr>
                 <td></td>
