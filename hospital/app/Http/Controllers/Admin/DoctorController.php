@@ -62,7 +62,7 @@ class DoctorController extends Controller{
 	public function doctorShow()
 	{
 
-		$arr=DB::select("select * from doctor inner join section on doctor.sec_id = section.sec_id");
+		$arr=DB::table('doctor')->join('section','doctor.sec_id','=','section.sec_id')->paginate(3);
         return view('doctor.doctorShow',['arr'=>$arr]);
 	}
 

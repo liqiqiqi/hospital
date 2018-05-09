@@ -81,6 +81,8 @@
                     <input type="text" class="span12" id="user" name="admin_name" value="" onblur='checkname();' placeholder="输入账号"><span></span>
                     <label>密码</label>
                     <input type="password" class="span12" id="pwd" name="admin_pwd" value="" onblur='checkpwd();' placeholder="输入密码"><span></span>
+                    <label>验证码</label>
+                    <td><input type="text" name="code" class="span12" value="" id='code' onblur="checkcode()"><span></span><br/><img id="imgcode" src='img.php'> 
                     <input type="submit" value="登录"  class="btn btn-primary pull-right">
                     <div class="clearfix"></div>
                 </form>
@@ -112,9 +114,18 @@
        obj.nextSibling.innerHTML='';
        return true;
     }
-   
+   function checkcode(){
+        var obj=document.getElementById("code");
+        if(obj.value==""){
+            obj.nextSibling.innerHTML='<em style="color:red;">验证码不能为空</em>';
+            return false;
+       }
+       
+       obj.nextSibling.innerHTML='';
+       return true;
+    }
     function sub(){
-         if(checkname()&&checkpwd()){
+         if(checkname()&&checkpwd()&&checkcode()){
             return true;
         }else{
             return false;
@@ -130,7 +141,12 @@
         $(function() {
             $('.demo-cancel-click').click(function(){return false;});
         });
+        $("#imgcode").click(function(){  
+        d=new Date();  
+        $("#imgcode").attr("src","./img.php?"+d.getTime());  
+        })  
     </script>
+
     
   </body>
 </html>
