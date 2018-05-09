@@ -88,33 +88,37 @@ $admin_name=$session->get('admin_name');
 
 
     
-  <div class="sidebar-nav">
+    <div class="sidebar-nav">
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>个人中心</a>
-        <ul id="dashboard-menu" class="nav nav-list collapse">
+        <ul id="dashboard-menu" class="nav nav-list collapse in">
             <li ><a href="<?php echo url('admins/adminreset')?>">修改密码</a></li>
             <li ><a href="<?php echo url('admins/adminreg')?>">管理员添加</a></li>
         </ul>
 
         <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>医院管理</a>
         <ul id="accounts-menu" class="nav nav-list collapse">
-            <li ><a href="<?php echo url('info/info')?>">医院信息</a></li>
+            <li ><a href="sign-in.html">Sign In</a></li>
+             <li ><a href="sign-up.html">Sign Up</a></li>
+            <li ><a href="reset-password.html">Reset Password</a></li>
         </ul>
 
         <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>科室管理<i class="icon-chevron-up"></i></a>
         <ul id="error-menu" class="nav nav-list collapse">
-            <li ><a href="<?php echo url('department/department')?>">科室展示</a></li>
-            <li ><a href="<?php echo url('department/deAdd')?>">科室添加</a></li>
+            <li ><a href="403">403 page</a></li>
+            <li ><a href="404.html">404 page</a></li>
+            <li ><a href="500.html">500 page</a></li>
+            <li ><a href="503.html">503 page</a></li>
         </ul>
 
         <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>医生管理</a>
         <ul id="legal-menu" class="nav nav-list collapse">
-            <li ><a href="<?php echo url('doctor/doctorAdd')?>">医生添加</a></li>
-            <li ><a href="<?php echo url('doctor/doctorShow')?>">医生列表</a></li>
+            <li ><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li ><a href="terms-and-conditions.html">Terms and Conditions</a></li>
         </ul>
 
-        <a href="<?php echo url('order/order')?>" class="nav-header" data-toggle="collapse"><i class="icon-question-sign"></i>预约列表</a>
-       
+        <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>预约管理</a>
     </div>
+    
 
     
     <div class="content">
@@ -143,11 +147,11 @@ $admin_name=$session->get('admin_name');
                             <form action="<?php echo url('admins/pwdedit')?>" method="post" onsubmit="return sub()">
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> 
                                 <label>原密码</label>
-                                <input type="password" class="span12" id="pwd0" name="admin_pwd0" value="" onblur='checkpwd0();' placeholder="请输入原密码"><span></span>
+                                <input type="password" class="span12" id="pwd0" onkeyup="value=value.replace(/\s/g,'')" name="admin_pwd0" value="" onblur='checkpwd0();' placeholder="请输入原密码"><span></span>
                                 <label>新密码</label>
-                                <input type="password" class="span12" id="pwd" name="admin_pwd" value="" onblur='checkpwd();' placeholder="请输入新密码"><span></span>
+                                <input type="password" class="span12" id="pwd" onkeyup="value=value.replace(/\s/g,'')" name="admin_pwd" value="" onblur='checkpwd();' placeholder="请输入新密码"><span></span>
                                 <label>确认密码</label>
-                                <input type="password" class="span12" id="pwd1" name="admin_pwd1" value="" onblur="checkpwd1();" placeholder="再次输入密码"><span></span>
+                                <input type="password" class="span12" id="pwd1" onkeyup="value=value.replace(/\s/g,'')" name="admin_pwd1" value="" onblur="checkpwd1();" placeholder="再次输入密码"><span></span>
                                 <input type="submit" value="修改"  class="btn btn-primary pull-right">
                                 <div class="clearfix"></div>
                             </form>
