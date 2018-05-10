@@ -48,3 +48,5 @@ Route::any('department/deUp', 'Admin\DepartmentController@deUp');
 Route::any('department/deUpDo', 'Admin\DepartmentController@deUpDo');
 Route::any('department/deDel', 'Admin\DepartmentController@deDel');
 
+Route::any('home/doctor/{doc_id}', 'Home\HomeController@doctor');
+Route::any('home/order', 'Home\HomeController@order');

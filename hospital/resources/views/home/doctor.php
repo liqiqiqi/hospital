@@ -9,7 +9,7 @@
 <meta name="keywords" content="HTML5,简约大气,网上,预约挂号,医院网站,网站模板,全套下载" />
 <meta name="description" content="HTML5简约大气网上预约挂号医院网站模板全套下载。" />
 <meta name="robots" content="All" />
-<meta http-equiv="mobile-agent" content="format=html5;url=http://m.hnsrmyy.net/" /> 
+<meta http-equiv="mobile-agent" content="format=html5;url=http://m.hnsrmyy.net/" />
 <noscript><meta http-equiv="refresh" content="0; url=/noscript.htm" /></noscript>
 <!--[if lt IE 7]><meta http-equiv="refresh" content="0; url=/YouLose.htm" /><![endif]-->
 <meta name="Author" content="miraclevision technical team,kunyi" />
@@ -115,7 +115,7 @@
         </div>
         </div>
         </div>
-    	</div>
+        </div>
     </li>
     <li class="PMenu"><img src="images/ico_014.png" class="animated" width="15" height="8" /><a href="kexue.html" id="Nav_AMenu2" class="PAMenu" title="预约进度查询">预约进度查询</a>
      <div class="navboxBase">
@@ -181,7 +181,7 @@
         <div class="clear"></div>
         </div>
         </div>
-    	</div>
+        </div>
     </li>
     <li class="PMenu"><img src="images/ico_014.png" class="animated" width="15" height="8" /><a href="NoticeList-110.html" id="Nav_AMenu3" class="PAMenu" title="著名医生展示">著名医生展示</a>
      <div class="navboxBase">
@@ -247,7 +247,7 @@
         <div class="clear"></div>
         </div>
         </div>
-    	</div>
+        </div>
     </li>
     
 </ul>
@@ -257,41 +257,23 @@
 
 <section class="bannerBase BaseMark">
 <div class="Banners">
-<ul class="AnimUl">
- <li><a href="http://www.hnsrmyy.net/NewsDetail-8464.html" title="院党委举行学习党的十八届六中全会精神和 省十次党代会精神专题辅导"><img src="uploadfiles/thumb/201607271939462.JPG"  alt="院党委举行学习党的十八届六中全会精神和 省十次党代会精神专题辅导" /></a></li>
+<form action="<?= url('home/order')?>" method="post">
+    <table>
+    <h2><font color="red">医生姓名：</font>&nbsp;&nbsp;<?= $list[0]->doc_name ?></h2><br/>
+    <h2><font color="red">联系方式：</font>&nbsp;&nbsp;<?= $list[0]->doc_tel ?></h2><br/>
+    <h2><font color="red">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</font>&nbsp;&nbsp;&nbsp;&nbsp;<?= $list[0]->doc_email ?></h2><br/>
+    <h2><font color="red">出诊时间：</font>&nbsp;&nbsp;<?php foreach ($doc_data['work_date'] as $key => $value) {?>
+                <input type="radio" name="work_date" value="<?= $list[0]->work_date ?>">&nbsp;&nbsp;<?= $value ?>
+                <?php } ?></h2><br/>
+    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+    <input type="hidden" name="doc_id" value="<?= $list[0]->doc_id ?>">
+    <br/>
+    <br/>
+    <br/>
+    <p><input type="submit" value="预约" style="width:80px;height:40px;background:#7FFF00;cursor:pointer;"></p>
 
-<li><a href="http://www.hnsrmyy.net/NewsDetail-8476.html" title="2016山西省眼科医师大会开启眼科发展新篇章"><img src="uploadfiles/thumb/201607271939462.jpg"  alt="2016山西省眼科医师大会开启眼科发展新篇章" /></a></li>
-
-<li><a href="http://www.hnsrmyy.net/NewsDetail-8470.html" title="立足中原 开放合作
-“直通梅奥国际诊疗中心中原中心”启动"><img src="uploadfiles/thumb/201607271939462.JPG"  alt="立足中原 开放合作
-“直通梅奥国际诊疗中心中原中心”启动" /></a></li>
-
-<li><a href="http://www.hnsrmyy.net/NewsDetail-8468.html" title="山西省医院自媒体联盟成立了！"><img src="uploadfiles/thumb/201607271939462.jpg"  alt="山西省医院自媒体联盟成立了！" /></a></li>
-
-<li><a href="http://www.hnsrmyy.net/NewsDetail-8472.html" title="“爱心传递 防治出生缺陷”公益行活动走进山西"><img src="uploadfiles/thumb/201607271939462.JPG"  alt="“爱心传递 防治出生缺陷”公益行活动走进山西" /></a></li>
-
- 
-<li><a href="http://www.hnsrmyy.net/NewsDetail-7944.html" title="我院空中救护成功转运首位重症患者—首个“中国紧急救援山西航空救援基地”落户省医"><img src="uploadfiles/thumb/2016072719395872.JPG"  alt="我院空中救护成功转运首位重症患者—首个“中国紧急救援山西航空救援基地”落户省医" /></a></li>
-
-<li><a href="javascript:void(0)" title=""><img src="uploadfiles/thumb/2016090608460311.jpg"  alt="" /></a></li>
-</ul>
-<div class="tools">
-<a href="javascript:void(0)" class="prev"><img alt="上一幅" src="images/btn_prev01.png" width="34" height="34" /></a>
-<a href="javascript:void(0)" class="next"><img alt="下一幅" src="images/btn_next01.png" width="34" height="34" /></a>
-<div class="text" id="BannerInfo"></div>
-<ul class="ulMark">
-<li class="animated"></li>
-<li class="animated"></li>
-<li class="animated"></li>
-<li class="animated"></li>
-<li class="animated"></li>
-<li class="animated"></li> 
-</ul>
-<div class="clear"></div>
-<div id="BannerSwitch" class="animated" data-type="0" data-right="0">
-<img src="images/ico_027.png" width="5" height="7" class="animated" ><span>隐藏</span>
-</div>
-</div>
+    </table>
+</form>
 </div>
 </section>
 
@@ -411,7 +393,7 @@
 <div class="websiteInfo">
     <div class="info">主办单位：医院标题  &nbsp; &nbsp;综合服务电话：120&nbsp;&nbsp; &nbsp;急救中心电话：120 &nbsp; 传真：120 &nbsp; 地 址：地址地址地址 &nbsp;<br/> 版权所有：医院标题  </div>
   <div class="clear"></div>
- <p> &copy;2015-<script language="javascript" type="text/javascript">document.write(new Date().getFullYear());</script>. All Rights Reserved. <a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank" >备案号0000001 </a></a></p>
+  <p> &copy;2015-<script language="javascript" type="text/javascript">document.write(new Date().getFullYear());</script>. All Rights Reserved. <a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank" >备案号0000001 </a></a></p>
 
 </div>
 </footer><div id="Footer_CodeDiv"><script type="text/javascript">
